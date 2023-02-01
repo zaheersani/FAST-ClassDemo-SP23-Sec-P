@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tables and Forms</title>
+    </head>
+    <body>
+        <h1>Tables and Forms</h1>
+        <table border="1" width="100%" >
+            <caption>Time Table for Spring 2023</caption>
+            <tr>
+                <th>0830-1000</th>
+                <th>1000-1130</th>
+                <th>1130-1300</th>
+            </tr>
+            <tr>
+                <td rowspan="3">Subject 1</td>
+                <td colspan="2">Subject 2</td>
+                <!-- <td>Subject 3</td> -->
+            </tr>
+            <tr>
+                <!-- <td>Subject 1</td> -->
+                <td>Subject 2</td>
+                <td>Subject 3</td>
+            </tr>            
+            <tr>
+                <!-- <td>Subject 1</td> -->
+                <td>Subject 2</td>
+                <td>Subject 3</td>
+            </tr>                        
+        </table>
+
+        <form method="" action="any-endpoint.php">
+
+            <p>
+                <label>First Name:</label>
+                <input type="text" name="firstname" value="" placeholder="Enter First Name" />
+            </p>
+            <p>
+                <label>Last Name:</label>
+                <input type="text" name="lastname" value="" placeholder="Enter Last Name" />            
+            </p>
+            <p>
+                <label>Email:</label>
+                <input type="email" name="email" value="" placeholder="Enter Email" required />
+            </p>
+            <p>
+                <label>Address</label>
+                <textarea cols="40" rows="3"></textarea>
+            </p>
+            <p>
+                <label>Gender</label>
+                <input type="radio" name="gender" value="male" checked />Male
+                <input type="radio" name="gender" value="female" />Female
+            </p>
+            <p>
+                <label>Degree Programs</label>
+                <input type="checkbox" name="program" value="BSSE" />SE
+                <input type="checkbox" name="program" value="BSCS" />CS
+                <input type="checkbox" name="program" value="BSAI" />AI
+            </p>
+            <p>
+                <label>City</label>
+                <select name="city">
+                    <optgroup label="Federal">
+                        <option value="isb">Islamabad</option>
+                    </optgroup>
+                    <optgroup label="Punjab">
+                        <option value="rwp">Rawalpindi</option>
+                        <option value="lhr">Lahore</option>
+                    </optgroup>
+                </select>
+            </p>
+            <p>
+                <label>Search</label>
+                <input type="search" />
+            </p>
+            <p>
+                <label>Searchable Drop Down</label>
+                <input type="text" list="countries" />
+                <datalist id="countries">
+                    <option>Pakistan</option>
+                    <option>Finland</option>
+                    <option>France</option>
+                    <option>India</option>
+                </datalist>
+            </p>
+            <p>
+                <input type="date" />
+            </p>
+            <input type="submit" />
+        </form>
+    </body>
+
+</html>
