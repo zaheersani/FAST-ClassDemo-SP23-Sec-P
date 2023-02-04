@@ -2,10 +2,18 @@
 <html>
     <head>
         <title>Tables and Forms</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            td {
+                border: 1px solid red;
+                padding: 5px 6px;
+                font-family: 'Courier New', Courier, monospace
+            }
+        </style>
     </head>
-    <body>
-        <h1>Tables and Forms</h1>
-        <table border="1" width="100%" >
+    <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <h1 style="font-size: 20px;">Tables and Forms</h1>
+        <table class="main-table" width="100%">
             <caption>Time Table for Spring 2023</caption>
             <tr>
                 <th>0830-1000</th>
@@ -15,17 +23,27 @@
             <tr>
                 <td rowspan="3">Subject 1</td>
                 <td colspan="2">Subject 2</td>
-                <!-- <td>Subject 3</td> -->
             </tr>
             <tr>
-                <!-- <td>Subject 1</td> -->
                 <td>Subject 2</td>
                 <td>Subject 3</td>
             </tr>            
             <tr>
-                <!-- <td>Subject 1</td> -->
                 <td>Subject 2</td>
-                <td>Subject 3</td>
+                <td>
+                    <table id="inner-table" width="100%">
+                        <tr>
+                            <td>Category 1</td>
+                            <td>Category 2</td>
+                            <td>Category 3</td>
+                        </tr>
+                        <tr>
+                            <td>Category 1</td>
+                            <td>Category 2</td>
+                            <td>Category 3</td>
+                        </tr>                        
+                    </table>                    
+                </td>
             </tr>                        
         </table>
 
