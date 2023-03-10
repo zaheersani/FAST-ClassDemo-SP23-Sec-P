@@ -22,6 +22,16 @@
             </div>
         </div>
 
+        <div class="container" style="display: none;" id="todoContainer">
+            <p class="display-6">TODOs</p>            
+            <div class="container">
+                <ul class="list-group" id="todolist">
+                    <li class="list-group-item">Item 1</li>
+                    <li class="list-group-item">Item 2</li>
+                </ul>
+            </div>
+        </div>
+
         <script>
             // TODO: Complete the Tasks
             // Display Users, Click on a User to Display user information
@@ -45,9 +55,20 @@
                     });
                     // Adding click event after rendering the elements
                     $('.list-group-item').on('click', function(e) {
-                        debugger;
+                        $('#todolist').html('')
+                        // debugger;
+                        var id = e.target.id;
+                        var filteredTodos = todos.filter(t => t.userId == id);
+                        
+                        filteredTodos.forEach(element => {
+                            // console.log(element.title)
+                            $('#todolist').append(`<li class="list-group-item" id="${element.id}">${element.title}</li>`);
+                        });
+
+                        $('#todoContainer').css('display', 'block')
                     })
                 })
+                console.log('I am not blocking!')
                 $.get('https://jsonplaceholder.typicode.com/todos', function(data, status) {
                     todos = data;
                 })

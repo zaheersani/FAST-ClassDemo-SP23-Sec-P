@@ -57,6 +57,7 @@
             $().ready(function(){
                 $.get('https://jsonplaceholder.typicode.com/posts', function(data, status){
                     // console.log(data)
+                    debugger;
                     data.forEach(element => {
                         // console.log(element);
                         $('#items-list').append(`<li class="list-group-item">${element.title}</li>`)
