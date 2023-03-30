@@ -1,10 +1,11 @@
 // Importing modules
-const express = require("express");
-const jwt = require("jsonwebtoken");
 const Users = require("./users.json");
-const dotenv = require("dotenv").config();
-
-// console.log(process.env.SECRET)
+// Import Express
+const express = require("express");
+// Import jsonwebtoken for JWT
+const jwt = require("jsonwebtoken");
+// Import dotenv to read .env file
+require("dotenv").config();
 
 const app = express();
 app.use(express.json());
@@ -99,7 +100,7 @@ app.get('/accessResource', (req, res) => {
             message: "Error! Token was not provided."});
 	}
 	//Decoding the token
-    jwt.verify(token, "secretkeyappearshere", (err, decodedToken) => {
+    jwt.verify(token, process.env.SECRET, (err, decodedToken) => {
         if (decodedToken) {
             res.status(200).json({
                 success: true,
