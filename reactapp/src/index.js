@@ -7,13 +7,17 @@ import reportWebVitals from './reportWebVitals';
 import { Counter, Counter2 } from "./Counter";
 import UsersAPICall from "./UsersAPICall";
 
+import { BrowserRouter } from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <Counter />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    {/* <Counter />
     <Counter2 />
-    <UsersAPICall />
+    <UsersAPICall /> */}
   </React.StrictMode>
 );
 
